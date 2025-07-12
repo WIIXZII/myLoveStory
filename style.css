@@ -1,72 +1,98 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #fff0f6;
-  color: #4a4a4a;
-  text-align: center;
+  background: #fff0f5;
+  color: #333;
 }
 
-header {
-  background-color: #ffb6c1;
-  padding: 40px 20px;
+.hero {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  text-align: center;
+  padding: 50px 20px;
   font-family: "Dancing Script", cursive;
 }
 
-header h1 {
-  font-size: 2.5em;
-  margin: 0;
+.hero h1 {
+  font-size: 3em;
   color: white;
 }
 
-header p {
-  font-size: 1.2em;
-  margin-top: 10px;
+.hero p {
+  font-size: 1.3em;
+  color: #fff;
 }
 
-section {
-  padding: 20px;
-  background-color: #ffe4ec;
-  border-radius: 10px;
-  margin: 20px auto;
-  width: 80%;
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.memory {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
   gap: 20px;
-  padding: 1%;
-  width: 80%;
-  margin: 10%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  animation: fadeInUp 1s ease-in-out;
 }
 
-.photo img {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  width: 80%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.memory:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.memory img {
+  width: 45%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .text {
-  font-size: 1.2em;
-  color: #333;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  flex: 1;
 }
-.photo img:hover {
-  transform: scale(1.05);
+
+.video-moment {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.video-moment video {
+  width: 80%;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.future {
+  background: #ffe4e1;
+  text-align: center;
+  padding: 40px 20px;
+  font-style: italic;
 }
 
 footer {
-  background-color: #ffe4ec;
-  padding: 15px;
-  font-size: 1em;
+  background: #ff9a9e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .memory {
+    flex-direction: column !important;
+  }
+
+  .memory img {
+    width: 100%;
+  }
 }
